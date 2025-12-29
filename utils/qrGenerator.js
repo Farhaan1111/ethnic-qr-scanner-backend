@@ -3,7 +3,7 @@ const QRCode = require('qrcode');
 class QRGenerator {
   static async generateProductQR(productId, options = {}) {
     try {
-      const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+      const baseUrl = process.env.FRONTEND_BASE_URL;
       const productUrl = `${baseUrl}/p/${productId}`;
       
       const qrOptions = {

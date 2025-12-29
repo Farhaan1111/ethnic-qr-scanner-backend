@@ -41,7 +41,9 @@ router.post(
       }
 
       const relativePath = `/uploads/products/${req.file.filename}`;
-      const fullUrl = `${req.protocol}://${req.get('host')}${relativePath}`;
+      const baseUrl = process.env.BACKEND_BASE_URL;
+      const fullUrl = `${baseUrl}${relativePath}`;
+
 
       // Default: no embedding (in case service fails)
       let embedding = null;
